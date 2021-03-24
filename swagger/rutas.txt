@@ -1,0 +1,9 @@
+✅ GET http://server.com/topicos/{id}/comentarios/{id}
+
+GET http://server.com/topicos/101/autores
+
+
+❌ GET http://server.com/comentarios/
+
+GET http://spotify.com/api/bandas/1222/disco/12/pista/3
+

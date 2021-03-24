@@ -1,0 +1,46 @@
+openapi: 3.0.0
+
+info:
+  title: delilah resto
+  description: aplicación para hacer pedidos de un restaourant
+  version: 1.0.0
+  contact:
+    name: Leo Casales
+    email: leonardo@smartnet.com.ar
+
+servers:
+  - url: http://localhost
+    description: desarrollo
+    variables:
+      port:
+        default: '3000'
+
+  - url: https://delilahresto.com
+    description: produccion
+
+  - url: https://dev.delilahresto.com
+    description: staging
+
+paths:
+  /productos:
+    get:
+      description: Obtiene la lista de productos
+      responses:
+        200:
+          description: success request
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                      example: 10
+                    fecha:
+                      type: string
+                      format: date
+                    precio:
+                      type: integer
+  
+
