@@ -1,0 +1,15 @@
+{
+  "name": "02-env",
+  "version": "1.0.0",
+  "description": "uso de variables de entorno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eject": "echo \"Ejecutando....\" && exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
