@@ -4,6 +4,8 @@
   "description": "uso de variables de entorno",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eject": "echo \"Ejecutando....\" && exit 0"
   },
@@ -11,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
