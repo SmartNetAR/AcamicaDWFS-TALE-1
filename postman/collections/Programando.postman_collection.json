@@ -23,12 +23,12 @@
 								},
 								{
 									"key": "client_id",
-									"value": "04326c7fde9346c89af71fc3abd65516",
+									"value": "your_client_id",
 									"type": "text"
 								},
 								{
 									"key": "client_secret",
-									"value": "b54b599bc28042f19a9623bf90822628",
+									"value": "your_client_secret",
 									"type": "text"
 								}
 							]
