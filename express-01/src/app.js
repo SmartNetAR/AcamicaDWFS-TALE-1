@@ -33,6 +33,16 @@ function validarDatos(req, res, next) {
 
 app.get('/helados', (req, res) =>
 {
+    const {sabor} = req.query;
+
+    if (sabor) {
+        const heladosFiltrados = gustosHelados.filter( helado => {
+            return helado.sabor.includes(sabor);
+        })
+        return res.status(200).json( {data: heladosFiltrados, status: "success"} );
+
+    }
+
     res.status(200).json( {data: gustosHelados, status: "success"} );
 });
 
