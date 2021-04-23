@@ -1,0 +1,21 @@
+version: "3"
+
+services: 
+  db:
+    container_name: mongo_db_1
+    # restart: always
+    image: bitnami/mongodb:4.2
+    ports:
+      - 27017:27017
+    # network_mode: host
+    environment:
+      MONGODB_ROOT_PASSWORD: 123456
+      MONGODB_USERNAME: acamica
+      MONGODB_PASSWORD: acamica
+      MONGODB_DATABASE: acamica
+    volumes:
+      - data:/bitnami/mongodb
+
+volumes: 
+  data:
+    driver: "local"
