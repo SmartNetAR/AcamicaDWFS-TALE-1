@@ -7,6 +7,8 @@ const Pelicula = mongoose.model('peliculas', {
     lanzamiento: Date
 })
 
-Pelicula.find().then((resp => {
-    console.log(resp)
-}))
+Pelicula.findOne({titulo: 'Titanic'})
+    .then((res) => {
+        console.log('La película encontrada es:');
+        console.log(res);
+    })
