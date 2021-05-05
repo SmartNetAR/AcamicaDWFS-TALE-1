@@ -1,0 +1,1 @@
+UPDATE `inscriptos` SET `nombre` = 'Daniel Segovia' WHERE `inscriptos`.`id` = 2;
