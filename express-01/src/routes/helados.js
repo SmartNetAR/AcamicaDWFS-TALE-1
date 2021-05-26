@@ -3,9 +3,10 @@ const router = express.Router();
 const validarDatos = require('../middlewares/validarDatos');
 
 let gustosHelados = [
-    { id: 4, sabor: "chocolate", precio: 20},
-    { id: 7, sabor: "vainilla", precio: 12},
-    { id: 8, sabor: "limón", precio: 19}
+    { id: 4, sabor: "chocolate", precio: 20, cantidad: 2},
+    { id: 7, sabor: "vainilla", precio: 12, cantidad: 5},
+    { id: 8, sabor: "limón", precio: 19, cantidad: 0},
+    { id: 9, sabor: "dulce de leche", precio: 19, cantidad: 0},
 ];
 router.get('/', (req, res) =>
 {
@@ -22,13 +23,13 @@ router.get('/', (req, res) =>
     res.status(200).json( {data: gustosHelados, status: "success"} );
 });
 
-router.get('/:id', (req, res) =>
+router.get('/:id([0-9]+)', (req, res) =>
 {
 
     const helado = gustosHelados.find( (el) => el.id == req.params.id );
 
     if (!helado) {
-        return res.status(400).end();
+        return res.status(400).json({msg: `No se encontró el helado con id ${req.params.id}` })
     }
     res.json({data: helado});
 });
@@ -67,5 +68,16 @@ router.put("/:id", validarDatos, (req, res) => {
     res.status(201).json({msg: 'updated'});
 
 } )
+
+router.get('/reponer', (req, res) =>
+{
+    const heladosAReponer = gustosHelados.filter( helado => {
+        return helado.cantidad === 0;
+    } )
+
+    res.status(200).json({data: heladosAReponer});
+
+})
+
 
 module.exports = router;

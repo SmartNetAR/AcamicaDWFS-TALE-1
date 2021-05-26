@@ -12,7 +12,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 
 app.use('/auth', authRoutes);
-app.use('/helados', heladosRoutes);
+app.use('/icecreams', heladosRoutes);
 
 
 app.listen(port, () => {
